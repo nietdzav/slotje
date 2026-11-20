@@ -2,15 +2,18 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>ExamenSlot laden...</title>
-  <!-- Hetzelfde icoontje voor de URL-balk tijdens het laden -->
+  <title>ExamenSlot</title>
   <link rel="icon" type="image/png" href="chrome-extension://hanjjgbdkmmmlpfojlmkicfpcaefgedj/icons/icon128.png">
-  <script>
-    // Stuur het venster direct door naar de lokaal geïnstalleerde extensie
-    window.location.replace("chrome-extension://hanjjgbdkmmmlpfojlmkicfpcaefgedj/popup.html");
-  </script>
 </head>
 <body style="background-color: #0f172a; color: white; font-family: sans-serif; text-align: center; padding-top: 50px;">
   ExamenSlot wordt geladen...
+
+  <script>
+    // 800 milliseconden vertraging zodat Google Admin de pagina succesvol kan valideren
+    // voordat de browser doorspringt naar de lokale extensie.
+    setTimeout(function() {
+      window.location.replace("chrome-extension://hanjjgbdkmmmlpfojlmkicfpcaefgedj/popup.html");
+    }, 800);
+  </script>
 </body>
 </html>
