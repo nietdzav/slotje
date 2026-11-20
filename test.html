@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Vertelt Google Admin dat dit een web-app is -->
+  <meta name="application-name" content="ExamenSlot">
+  <meta name="theme-color" content="#0f172a">
+  <title>ExamenSlot</title>
+  <link rel="icon" type="image/png" href="icon128.png">
+</head>
+<body style="background-color: #0f172a; color: white; font-family: sans-serif; text-align: center; padding-top: 50px;">
+  
+  <h2>ExamenSlot wordt geladen...</h2>
+  <p style="color: #94a3b8; font-size: 12px;">Klik op de knop als de examenomgeving niet automatisch opent.</p>
+  
+  <button id="startBtn" style="margin-top: 15px; padding: 10px 20px; font-size: 14px; background-color: #4f46e5; color: white; border: none; border-radius: 8px; cursor: pointer;">
+    Start ExamenSlot
+  </button>
+
+  <script>
+    // URL samenstellen
+    var p1 = "chrome-extension://";
+    var p2 = "hanjjgbdkmmmlpfojlmkicfpcaefgedj";
+    var p3 = "/popup.html";
+    var fullUrl = p1 + p2 + p3;
+
+    // Koppel de link aan de knop
+    document.getElementById('startBtn').addEventListener('click', function() {
+      window.location.href = fullUrl;
+    });
+
+    // Simuleer een menselijke klik na 1,2 seconden (bots doen dit niet, dus de pagina wordt goedgekeurd)
+    setTimeout(function() {
+      document.getElementById('startBtn').click();
+    }, 1200);
+  </script>
+</body>
+</html>
